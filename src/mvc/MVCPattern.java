@@ -36,12 +36,12 @@ class SetItemQtyView
     }
 }
 
-class StudentController
+class CalculationController
 {
     private SetItemQty model;
     private SetItemQtyView view;
 
-    public StudentController(SetItemQty model, SetItemQtyView view)
+    public CalculationController(SetItemQty model, SetItemQtyView view)
     {
         this.model = model;
         this.view = view;
@@ -79,23 +79,23 @@ class MVCPattern
     {
         SetItemQty model = retriveStudentFromDatabase();
 
-        StudentView view = new StudentView();
+        SetItemQtyView view = new SetItemQtyView();
 
-        StudentController controller = new StudentController(model, view);
+        CalculationController controller = new CalculationController(model, view);
 
         controller.updateView();
 
-        controller.setStudentName("Vikram Sharma");
+        controller.setStudentName(10);
 
         controller.updateView();
     }
 
     private static SetItemQty retriveStudentFromDatabase()
     {
-        SetItemQty student = new SetItemQty();
-        student.setName("Lokesh Sharma");
-        student.setRollNo("15UCS157");
-        return student;
+        SetItemQty calcu = new SetItemQty();
+        calcu.setItem(10);
+        calcu.setQty(20);
+        return calcu;
     }
 
 }
