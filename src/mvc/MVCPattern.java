@@ -28,11 +28,14 @@ class SetItemQty
 
 class SetItemQtyView
 {
-    public void printCalculationDetails(double item, double qty)
+    public double calculateTotal(double item, double qty)
     {
-        System.out.println("Calculation: ");
-        System.out.println("Name: " + item);
-        System.out.println("Roll No: " + qty);
+      double basePrice = qty * item;
+      if (basePrice>1000){
+          return (basePrice*0.95);
+      }else {
+          return basePrice*0.98;
+      }
     }
 }
 
@@ -69,7 +72,7 @@ class CalculationController
 
     public void updateView()
     {
-        view.printCalculationDetails(model.getItem(), model.getQty());
+        view.calculateTotal(model.getItem(), model.getQty());
     }
 }
 
