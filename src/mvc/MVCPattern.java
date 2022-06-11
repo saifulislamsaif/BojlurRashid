@@ -77,7 +77,7 @@ class MVCPattern
 {
     public static void main(String[] args)
     {
-        SetItemQty model = retriveStudentFromDatabase();
+        SetItemQty model = retriveCalCulatinFromDatabase();
 
         SetItemQtyView view = new SetItemQtyView();
 
@@ -90,7 +90,7 @@ class MVCPattern
         controller.updateView();
     }
 
-    private static SetItemQty retriveStudentFromDatabase()
+    private static SetItemQty retriveCalCulatinFromDatabase()
     {
         SetItemQty calcu = new SetItemQty();
         calcu.setItem(10);
